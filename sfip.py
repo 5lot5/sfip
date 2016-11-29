@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 '''
-    Super fast nextwork scanner written by 5lot5
+    Super fast network scanner written by 5lot5
 	Feel free to use and modify
 '''
 	
@@ -51,11 +51,10 @@ def Main():
     print "------------------------------------------\n"
     try:
        if len(sys.argv) > 1:
-          print "Single scan mode\n"
+          print "Single scan mode...\n"
           singlescan(sys.argv[1])
        else:
           fullscan() 
-
 
     except:
           exit('Oops....something went wrong...')
