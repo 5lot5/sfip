@@ -7,7 +7,7 @@
 	
 import os, sys, time
 from subprocess import Popen, PIPE
-from threading import Thread
+from threading import Thread, enumerate
 
 def checkroot():
     if os.getuid() != 0:
@@ -33,8 +33,10 @@ def fullscan():
           nr = "T"+str(ip)
           nr = Thread(target=scan, args=(nr, ip))
           nr.start()
-    time.sleep(3)
-    print "\nScan Completed. Have a nice day.\n"
+    while len(enumerate()) != 1:
+          pass
+    print "\nScan has finished. Have a nice day.\n"
+
 
 def singlescan(ip):
      online = os.system("ping -c 1 "+str(ip) +" > /dev/null")
