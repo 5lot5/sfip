@@ -29,7 +29,13 @@ def scan(T, ip):
 
 def fullscan():
     print "Scan of the local network started...\n"
-    for ip in range(0, 249):
+    for ip in range(0, 149):
+          nr = "T"+str(ip)
+          nr = Thread(target=scan, args=(nr, ip))
+          nr.start()
+    while len(enumerate()) != 1:
+          pass
+    for ip in range(149, 249):
           nr = "T"+str(ip)
           nr = Thread(target=scan, args=(nr, ip))
           nr.start()
